@@ -622,9 +622,12 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 
 
     public void OnBindViewHolder(BaseViewHolder holder, final int position){
-        holder.setData(getItem(position));
+        holder.setData(getItem(position - getOffset()));
     }
 
+    public int getOffset(){
+        return 0;
+    }
 
     @Deprecated
     @Override
@@ -644,7 +647,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
             6:footer1   6(position) - 2 - 4 = 0
             7:footer2
              */
-            int i = position - headers.size() - mObjects.size();
+            int i = position - headers.size() - getCount();
             if (i >= 0){
                 return footers.get(i).hashCode();
             }
