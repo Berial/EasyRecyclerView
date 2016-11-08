@@ -530,7 +530,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
     @Deprecated
     @Override
     public final int getItemCount() {
-        return mObjects.size()+headers.size()+footers.size();
+        return getCount()+headers.size()+footers.size();
     }
 
     /**
