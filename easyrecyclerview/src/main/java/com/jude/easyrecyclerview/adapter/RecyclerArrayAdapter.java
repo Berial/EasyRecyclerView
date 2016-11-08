@@ -635,7 +635,7 @@ abstract public class RecyclerArrayAdapter<T> extends RecyclerView.Adapter<BaseV
 
 
     public void OnBindViewHolder(BaseViewHolder holder, final int position) {
-        holder.setData(getItem(position - getOffset()));
+        holder.setData(getItem(position));
     }
 
     public int getOffset() {
